@@ -1,0 +1,12 @@
+# ignore virtualenv
+env/
+venv/
+
+# ignore core
+core/__init__.py
+core/__pycache__
+
+# ignore main
+main/__init__.py
+main/migrations/
+main/__pycache__
