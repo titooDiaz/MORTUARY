@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -9,8 +10,8 @@ class User(AbstractUser):
     address = models.CharField(max_length=255, blank=True)
     numbers = models.ManyToManyField('PhoneNumber', blank=True, related_name='users')
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return self.email
