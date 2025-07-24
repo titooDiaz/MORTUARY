@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funeraria Cristo Rey</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .parallax {background-attachment: fixed;background-size: cover;background-position: center;}
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 50;
+      background: #25d366; color: #fff; border-radius: 50%; width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px #0001;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {transform: scale(1.1);}
+    @media (max-width: 640px) {
+      .parallax {background-attachment: scroll;}
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-gray-50 via-yellow-50 to-gray-100 min-h-screen font-sans">
+
+  <div class="w-full bg-yellow-400 text-white text-center py-2 text-sm font-semibold">
+    Atención inmediata 24h: <a href="tel:+571234567890" class="underline">+57 123 456 7890</a>
+  </div>
+
+  <nav class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow flex justify-between items-center px-4 sm:px-8 py-4">
+    <div class="font-bold text-xl text-yellow-700">Funeraria Cristo Rey</div>
+    <ul class="hidden md:flex gap-4 sm:gap-6 text-gray-700 font-medium text-sm">
+      <li><a href="#inicio" class="hover:text-yellow-600">Inicio</a></li>
+      <li><a href="#servicios" class="hover:text-yellow-600">Servicios</a></li>
+      <li><a href="#beneficios" class="hover:text-yellow-600">Beneficios</a></li>
+      <li><a href="#convenios" class="hover:text-yellow-600">Convenios</a></li>
+      <li><a href="#precios" class="hover:text-yellow-600">Precios</a></li>
+      <li><a href="#galeria" class="hover:text-yellow-600">Galería</a></li>
+      <li><a href="#faq" class="hover:text-yellow-600">FAQ</a></li>
+      <li><a href="#contacto" class="hover:text-yellow-600">Contacto</a></li>
+    </ul>
+    <a href="#cotizar" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-full shadow transition hidden md:block">Cotización rápida</a>
+
+
+    <button class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400" onclick="toggleMenu()" aria-label="Abrir menú" id="menu-btn">
+      <svg class="w-7 h-7 text-yellow-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+      </svg>
+    </button>
+  </nav>
+
+
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-black/40 hidden" onclick="toggleMenu()"></div>
+  <ul id="mobile-menu" class="fixed top-0 left-0 right-0 z-50 bg-white shadow px-4 py-6 space-y-2 text-gray-700 font-medium text-base hidden transition duration-200">
+    <li><a href="#inicio" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Inicio</a></li>
+    <li><a href="#servicios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Servicios</a></li>
+    <li><a href="#beneficios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Beneficios</a></li>
+    <li><a href="#convenios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Convenios</a></li>
+    <li><a href="#precios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Precios</a></li>
+    <li><a href="#galeria" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Galería</a></li>
+    <li><a href="#faq" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">FAQ</a></li>
+    <li><a href="#contacto" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Contacto</a></li>
+    <li><a href="#cotizar" class="block py-2 bg-yellow-400 text-white rounded-full text-center shadow" onclick="toggleMenu()">Cotización rápida</a></li>
+  </ul>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      menu.classList.toggle('hidden');
+      overlay.classList.toggle('hidden');
+      document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+    }
+    // Opcional: Cierra el menú si se redimensiona a escritorio
+    window.addEventListener('resize', () => {
+      if(window.innerWidth >= 768){
+        document.getElementById('mobile-menu').classList.add('hidden');
+        document.getElementById('mobile-menu-overlay').classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <section id="inicio" class="parallax h-[40vh] sm:h-[60vh] flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');">
+    <div class="bg-white/70 rounded-xl p-6 sm:p-10 shadow-xl text-center max-w-2xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Acompañamos cada momento</h1>
+      <p class="text-base sm:text-lg text-gray-800 mb-4">Funeraria Cristo Rey: Serenidad, respeto y confianza para tu familia.</p>
+      <a href="#cotizar" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-2 rounded-full shadow transition">Cotizar ahora</a>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=120&q=80" class="mb-3 sm:mb-4 rounded-lg w-16 h-16 object-cover" alt="Integral">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-1 sm:mb-2">Préstamos de equipos de velación</h3>
+        <p class="text-gray-600 text-center text-xs sm:text-sm">Acompañamiento total, trámites y ceremonia.</p>
+        <a href="#" class="text-yellow-600 hover:underline mt-2 text-xs sm:text-sm">Más información</a>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=120&q=80" class="mb-3 sm:mb-4 rounded-lg w-16 h-16 object-cover" alt="Velación">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-1 sm:mb-2">Sala de Velación</h3>
+        <p class="text-gray-600 text-center text-xs sm:text-sm">Espacios privados y cálidos para la despedida.</p>
+        <a href="#" class="text-yellow-600 hover:underline mt-2 text-xs sm:text-sm">Ver detalles</a>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=120&q=80" class="mb-3 sm:mb-4 rounded-lg w-16 h-16 object-cover" alt="Traslados">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-1 sm:mb-2">Traslados</h3>
+        <p class="text-gray-600 text-center text-xs sm:text-sm">Gestión y traslado nacional e internacional.</p>
+        <a href="#" class="text-yellow-600 hover:underline mt-2 text-xs sm:text-sm">Más info</a>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition">
+        <img src="https://images.unsplash.com/photo-1465101178521-c1a07282763a?auto=format&fit=crop&w=120&q=80" class="mb-3 sm:mb-4 rounded-lg w-16 h-16 object-cover" alt="Mas">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-1 sm:mb-2">Más</h3>
+        <p class="text-gray-600 text-center text-xs sm:text-sm">...</p>
+        <a href="#" class="text-yellow-600 hover:underline mt-2 text-xs sm:text-sm">Detalles</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-xl font-semibold text-gray-900 mb-4 text-center">Beneficios para tu familia</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-base sm:text-lg">Atención 24/7</h3>
+        <p class="text-gray-700 text-xs sm:text-sm mt-2">Siempre listos para ayudarte en cualquier momento.</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-base sm:text-lg">Planes flexibles</h3>
+        <p class="text-gray-700 text-xs sm:text-sm mt-2">Soluciones ajustadas a tus necesidades y presupuesto.</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-base sm:text-lg">Equipo humano</h3>
+        <p class="text-gray-700 text-xs sm:text-sm mt-2">Profesionales capacitados y empáticos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Planes y Precios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-yellow-100 rounded-xl shadow p-4 sm:p-6 flex flex-col items-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Básico</h3>
+        <p class="text-xl sm:text-2xl font-bold text-yellow-700 mb-2">$150</p>
+        <ul class="text-gray-700 mb-4 text-xs sm:text-sm text-center">
+          <li>Servicio esencial</li>
+          <li>Asesoría personalizada</li>
+        </ul>
+        <a href="#cotizar" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-1 rounded-full shadow transition text-xs sm:text-sm">Solicitar</a>
+      </div>
+      <div class="bg-yellow-100 rounded-xl shadow p-4 sm:p-6 flex flex-col items-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Estándar</h3>
+        <p class="text-xl sm:text-2xl font-bold text-yellow-700 mb-2">$300</p>
+        <ul class="text-gray-700 mb-4 text-xs sm:text-sm text-center">
+          <li>Sala de velación</li>
+          <li>Flores y ornamentos</li>
+        </ul>
+        <a href="#cotizar" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-1 rounded-full shadow transition text-xs sm:text-sm">Solicitar</a>
+      </div>
+      <div class="bg-yellow-100 rounded-xl shadow p-4 sm:p-6 flex flex-col items-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Premium</h3>
+        <p class="text-xl sm:text-2xl font-bold text-yellow-700 mb-2">$500</p>
+        <ul class="text-gray-700 mb-4 text-xs sm:text-sm text-center">
+          <li>Traslado nacional</li>
+          <li>Atención 24h</li>
+        </ul>
+        <a href="#cotizar" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-1 rounded-full shadow transition text-xs sm:text-sm">Solicitar</a>
+      </div>
+      <div class="bg-yellow-100 rounded-xl shadow p-4 sm:p-6 flex flex-col items-center">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">VIP</h3>
+        <p class="text-xl sm:text-2xl font-bold text-yellow-700 mb-2">$1.000</p>
+        <ul class="text-gray-700 mb-4 text-xs sm:text-sm text-center">
+          <li>Experiencia personalizada</li>
+          <li>Recuerdos especiales</li>
+        </ul>
+        <a href="#cotizar" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-1 rounded-full shadow transition text-xs sm:text-sm">Solicitar</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="parallax mt-14 h-[28vh] sm:h-[40vh] flex items-center justify-center" style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fethic.es%2Fel-enigma-de-la-imagen&psig=AOvVaw2p37AhZqAv94LUX2nF-6B3&ust=1753393800394000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiQp4b7044DFQAAAAAdAAAAABAE');">
+    <div class="bg-white/80 rounded-xl p-4 sm:p-8 shadow-xl text-center w-[80%] md:w-[60%] mx-auto">
+      <h2 class="text-2xl sm:text-xl font-semibold text-gray-800 mb-2">Galería</h2>
+      <p class="text-gray-600 mb-4 text-xs sm:text-lg">Instalaciones cálidas que invitan a la serenidad.</p>
+      <div class="flex justify-center gap-2 sm:gap-4">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=100&q=80" class="rounded-lg w-[40%] h-22 sm:w-20 sm:h-22 object-cover" alt="Galería 1">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=100&q=80" class="rounded-lg w-[40%] h-22 sm:w-20 sm:h-22 object-cover" alt="Galería 2">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=100&q=80" class="rounded-lg w-[40%] h-22 sm:w-20 sm:h-22 object-cover" alt="Galería 3">
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-xl font-semibold text-gray-900 mb-3 text-center">¿Dónde estamos?</h2>
+    <div class="rounded-xl shadow overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63623.37156848191!2d-74.05238645000001!3d4.689715349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBar%20Colombia!5e0!3m2!1ses!2sco!4v1753290983294!5m2!1ses!2sco" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="text-center mt-2 text-gray-700 text-sm">Cra. 45 #23-10, Táchira, Venezuela</div>
+  </section>
+
+
+  <section id="faq" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-xl font-semibold text-gray-900 mb-4 text-center">Preguntas Frecuentes</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-base sm:text-lg">¿Qué hacer ante un fallecimiento?</h3>
+        <p class="text-gray-600 text-xs sm:text-sm">Llámanos y te acompañamos en cada paso legal y emocional.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-base sm:text-lg">¿Puedo pagar en cuotas?</h3>
+        <p class="text-gray-600 text-xs sm:text-sm">Ofrecemos facilidades y convenios especiales.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-base sm:text-lg">¿Tienen atención en todo el munucipio?</h3>
+        <p class="text-gray-600 text-xs sm:text-sm">Sí, cobertura regional.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-base sm:text-lg">¿Cómo es el proceso?</h3>
+        <p class="text-gray-600 text-xs sm:text-sm">Te explicamos y acompañamos en todo el proceso con respeto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-xl font-semibold text-gray-900 mb-4 text-center">Testimonios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <p class="text-gray-600 italic mb-4 text-xs sm:text-sm">"La atención fue cálida y profesional. Nos ayudaron en cada detalle."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full" alt="Testimonio 1">
+          <span class="font-semibold text-gray-800 text-xs sm:text-sm">María G.</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <p class="text-gray-600 italic mb-4 text-xs sm:text-sm">"El servicio fue impecable y nos brindaron tranquilidad."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full" alt="Testimonio 2">
+          <span class="font-semibold text-gray-800 text-xs sm:text-sm">Carlos R.</span>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <p class="text-gray-600 italic mb-4 text-xs sm:text-sm">"Muy agradecidos por la empatía y calidad humana."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full" alt="Testimonio 3">
+          <span class="font-semibold text-gray-800 text-xs sm:text-sm">Ana P.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cotizar" class="max-w-xl mx-auto mt-14 px-2 sm:px-4">
+    <div class="bg-white rounded-xl shadow p-4 sm:p-8">
+      <h2 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 text-center">Cotización Rápida</h2>
+      <form class="flex flex-col gap-3 sm:gap-4">
+        <input type="text" placeholder="Nombre" class="border rounded px-4 py-2 text-sm">
+        <input type="email" placeholder="Correo" class="border rounded px-4 py-2 text-sm">
+        <input type="tel" placeholder="Teléfono" class="border rounded px-4 py-2 text-sm">
+        <select class="border rounded px-4 py-2 text-sm">
+          <option>Selecciona un servicio</option>
+          <option>Integral</option>
+          <option>Velación</option>
+          <option>Traslado</option>
+          <option>Cremación</option>
+        </select>
+        <textarea placeholder="Mensaje o requerimiento" class="border rounded px-4 py-2 text-sm"></textarea>
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-full shadow transition text-sm">Solicitar cotización</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-100 mt-14 py-8 px-2 sm:px-4 rounded-t-xl">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div>
+        <div class="font-bold text-lg mb-2">Cristo Rey</div>
+        <p class="text-xs sm:text-sm">Funeraria en Queniquea, acompañamos con respeto y serenidad.</p>
+      </div>
+      <div>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li><a href="#servicios" class="hover:underline">Servicios</a></li>
+          <li><a href="#precios" class="hover:underline">Planes y Precios</a></li>
+          <li><a href="#faq" class="hover:underline">FAQ</a></li>
+          <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-2">Contacto inmediato</div>
+        <a href="tel:+571234567890" class="block text-yellow-400 font-bold text-xs sm:text-sm">+57 123 456 7890</a>
+        <a href="mailto:info@cristorey.com" class="block text-xs sm:text-sm hover:underline mt-1">info@cristorey.com</a>
+        <div class="mt-2 text-xs sm:text-sm">Cra. 45 #23-10, Bogotá</div>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-xs text-gray-400">© 2025 Funeraria Cristo Rey. Todos los derechos reservados.</div>
+  </footer>
+
+  <a href="https://wa.me/571234567890" class="whatsapp-float" title="Chatea por WhatsApp" target="_blank" rel="noopener">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.624.393 3.17 1.17 4.566L2 22l5.601-1.162A9.944 9.944 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.618 0-3.193-.392-4.58-1.137l-.326-.166-3.328.69.681-3.246-.177-.333A7.97 7.97 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.392-6.164c-.205-.102-1.209-.598-1.396-.666-.187-.067-.324-.1-.462.102-.137.201-.529.666-.647.803-.118.137-.237.151-.441.05-.205-.102-.866-.319-1.649-.981a6.187 6.187 0 0 1-1.21-1.503c-.127-.219-.014-.338.095-.44.097-.097.217-.251.326-.377.108-.126.144-.219.216-.366.071-.148.036-.274-.018-.377-.054-.102-.462-1.111-.633-1.52-.166-.401-.336-.348-.462-.355-.119-.007-.255-.009-.391-.009a.747.747 0 0 0-.542.253c-.186.202-.724.707-.724 1.723 0 1.016.74 2 1.011 2.14.271.139 1.384.664 1.579.713.195.049.308.047.422-.028.113-.075.479-.374.941-.725.462-.351.957-.732 1.144-1.06.187-.329.187-.608.133-.725z"></path></svg>
+  </a>
+</body>
+</html>
