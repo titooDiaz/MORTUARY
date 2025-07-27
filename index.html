@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="shortcut icon" href="./static/img/seguro-funerario.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funeraria Cristo Rey Queniquea</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .parallax {background-attachment: fixed;background-size: cover;background-position: center;}
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 50;
+      background: #25d366; color: #fff; border-radius: 50%; width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px #0001;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {transform: scale(1.1);}
+    @media (max-width: 640px) {
+      .parallax {background-attachment: scroll;}
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 via-yellow-50 to-gray-100 min-h-screen font-sans">
+
+  <div class="w-full bg-yellow-400 text-white text-center py-2 text-sm font-semibold">
+    Atención inmediata 24h: <a href="tel:+584147038574" class="underline">0414-7038574 </a> o <a href="tel:+584247032061" class="underline">0424-7032061</a> 
+  </div>
+
+  <nav class="bg-white/80 backdrop-blur sticky top-0 z-40 shadow flex justify-between items-center px-4 sm:px-8 py-4">
+    <div class="font-bold text-xl sm:text-2xl text-yellow-700">Funeraria Cristo Rey Queniquea</div>
+    <ul class="hidden md:flex gap-4 sm:gap-6 text-gray-700 font-medium text-base">
+      <li><a href="#inicio" class="hover:text-yellow-600">Inicio</a></li>
+      <li><a href="#servicios" class="hover:text-yellow-600">Servicios</a></li>
+      <li><a href="#beneficios" class="hover:text-yellow-600">Beneficios</a></li>
+      <li><a href="#precios" class="hover:text-yellow-600">Precios</a></li>
+      <li><a href="#galeria" class="hover:text-yellow-600">Galería</a></li>
+      <li><a href="#faq" class="hover:text-yellow-600">FAQ</a></li>
+      <li><a href="#contacto" class="hover:text-yellow-600">Dirección</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send?phone=584247032061&text=Hola,%20me%20interesa%20tu%20servicio.%20Me%20regalas%20más%20información?" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded-full shadow transition hidden md:block text-base font-semibold">Cotización vía WhatsApp</a>
+    <button class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400" onclick="toggleMenu()" aria-label="Abrir menú" id="menu-btn">
+      <svg class="w-7 h-7 text-yellow-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-black/40 hidden" onclick="toggleMenu()"></div>
+  <ul id="mobile-menu" class="fixed top-0 left-0 right-0 z-50 bg-white shadow px-4 py-6 space-y-2 text-gray-700 font-medium text-lg hidden transition duration-200">
+    <li><a href="#inicio" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Inicio</a></li>
+    <li><a href="#servicios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Servicios</a></li>
+    <li><a href="#beneficios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Beneficios</a></li>
+    <li><a href="#precios" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Precios</a></li>
+    <li><a href="#galeria" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Galería</a></li>
+    <li><a href="#faq" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">FAQ</a></li>
+    <li><a href="#contacto" class="block py-2 hover:text-yellow-600" onclick="toggleMenu()">Dirección</a></li>
+    <li><a href="https://api.whatsapp.com/send?phone=584247032061&text=Hola,%20me%20interesa%20tu%20servicio.%20Me%20regalas%20más%20información?" class="block py-2 bg-yellow-400 text-white rounded-full text-center shadow font-semibold" onclick="toggleMenu()">Cotización vía WhatsApp</a></li>
+  </ul>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      menu.classList.toggle('hidden');
+      overlay.classList.toggle('hidden');
+      document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+    }
+    window.addEventListener('resize', () => {
+      if(window.innerWidth >= 768){
+        document.getElementById('mobile-menu').classList.add('hidden');
+        document.getElementById('mobile-menu-overlay').classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <section id="inicio" class="parallax h-[40vh] sm:h-[60vh] flex items-center justify-center" style="background-image: url('./static/img/principal1.png');">
+    <div class="bg-white/70 rounded-xl p-6 sm:p-10 shadow-xl text-center max-w-2xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Acompañamos cada momento 🕊️</h1>
+      <p class="text-lg sm:text-xl text-gray-800 mb-4">Funeraria Cristo Rey Queniquea: Una mano amiga en ese momento de dolor.</p>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4 scroll-mt-20">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 text-center">Nuestros Servicios</h2>
+    <div class="flex flex-wrap justify-center gap-6 px-2">
+      <!-- Service 1 -->
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition w-full max-w-[290px]">
+        <img src="./static/img/imagen4.jpeg" class="mb-3 sm:mb-4 rounded-lg w-20 h-20 object-cover" alt="Integral">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Te ayudamos</h3>
+        <p class="text-gray-600 text-center text-base">Acompañamiento total, trámites y ceremonia.</p>
+        <button data-modal="modal1" class="text-yellow-600 hover:underline mt-2 text-base">Más información</button>
+      </div>
+      <!-- Service 2 -->
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition w-full max-w-[290px]">
+        <img src="./static/img/imagen2.jpeg" class="mb-3 sm:mb-4 rounded-lg w-20 h-20 object-cover" alt="Ornamentación">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Ornamentación fúnebre</h3>
+        <p class="text-gray-600 text-center text-base">Préstamo de equipos, floreros, velas, etc.</p>
+        <button data-modal="modal2" class="text-yellow-600 hover:underline mt-2 text-base">Más información</button>
+      </div>
+      <!-- Service 3 -->
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition w-full max-w-[290px]">
+        <img src="./static/img/imagen1.jpeg" class="mb-3 sm:mb-4 rounded-lg w-20 h-20 object-cover" alt="Velación">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Sala de Velación</h3>
+        <p class="text-gray-600 text-center text-base">Espacios privados y cálidos para la despedida.</p>
+        <button data-modal="modal3" class="text-yellow-600 hover:underline mt-2 text-base">Ver detalles</button>
+      </div>
+      <!-- Service 4 -->
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col items-center hover:scale-105 transition w-full max-w-[290px]">
+        <img src="./static/img/imagen7.png" class="mb-3 sm:mb-4 rounded-lg w-20 h-20 object-cover" alt="Traslados">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Traslados</h3>
+        <p class="text-gray-600 text-center text-base">Gestión y traslado regional.</p>
+        <button data-modal="modal4" class="text-yellow-600 hover:underline mt-2 text-base">Más info</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4 scroll-mt-20">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 text-center">Beneficios de contratar nuestros servicios</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-lg mb-1">Atención 24/7</h3>
+        <p class="text-gray-700 text-base mt-2">Siempre listos para ayudarte en cualquier momento.</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-lg mb-1">Planes flexibles</h3>
+        <p class="text-gray-700 text-base mt-2">Soluciones ajustadas a tus necesidades y presupuesto.</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-lg mb-1">Equipo humano</h3>
+        <p class="text-gray-700 text-base mt-2">Profesionales capacitados y empáticos.</p>
+      </div>
+      <div class="bg-yellow-50 rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 text-lg mb-1">Seguridad</h3>
+        <p class="text-gray-700 text-base mt-2">Contamos con la permisología avalada por el Servicio Autónomo de Contraloría Sanitaria.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios -->
+  <section id="precios" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Precios</h2>
+    <div class="flex justify-center">
+      <div class="w-full max-w-lg bg-yellow-100 rounded-2xl shadow-lg p-6 text-center">
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Ajustados al presupuesto del cliente</h3>
+        <p class="text-2xl font-bold text-yellow-700 mb-4">¡Accesibles y flexibles!</p>
+        <ul class="text-gray-700 text-base">
+          <li>
+            Nuestra intención es ser una mano amiga para el cliente. Nuestro acompañamiento es social y económico, enfocado en tus necesidades reales.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="parallax mt-14 flex items-center justify-center">
+    <div class="bg-white/80 rounded-xl p-4 sm:p-8 shadow-xl text-center w-[98%] sm:w-[90%] md:w-[70%] mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-gray-800 mb-2">Galería</h2>
+      <p class="text-gray-600 mb-4 text-lg">Instalaciones cálidas que invitan a la serenidad.</p>
+      <div class="flex overflow-x-auto sm:overflow-visible gap-4 sm:gap-6 sm:flex-wrap sm:justify-center scroll-snap-x scroll-smooth pb-2">
+        <img src="./static/img/icono.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 1">
+        <img src="./static/img/imagen2.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 2">
+        <img src="./static/img/imagen3.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 3">
+        <img src="./static/img/imagen5.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 4">
+        <img src="./static/img/imagen4.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 5">
+        <img src="./static/img/imagen1.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 6">
+        <img src="./static/img/imagen6.jpeg" class="rounded-lg object-cover h-[75vh] min-w-[98vw] sm:h-60 sm:min-w-[220px] sm:w-60 transition-transform duration-300 sm:hover:scale-110 z-10 relative scroll-snap-start" alt="Galería 7">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 text-center">Preguntas Frecuentes</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-xl">¿Qué hacer ante un fallecimiento?</h3>
+        <p class="text-gray-600 text-base">Llámanos y te acompañamos en cada paso legal y emocional.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-xl">¿Puedo pagar en cuotas?</h3>
+        <p class="text-gray-600 text-base">Ofrecemos facilidades y convenios especiales.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-xl">¿Tienen atención en todos los municipios?</h3>
+        <p class="text-gray-600 text-base">Sí, cobertura estatal.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 sm:p-6">
+        <h3 class="font-bold text-gray-800 mb-2 text-xl">¿Cómo es el proceso?</h3>
+        <p class="text-gray-600 text-base">Te explicamos y acompañamos en todo el proceso con respeto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-6xl mx-auto mt-14 px-2 sm:px-4 scroll-mt-20">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-3 text-center">¿Dónde estamos?</h2>
+    <div class="rounded-xl shadow overflow-hidden">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d987.9473317561926!2d-72.01496573037676!3d7.917061999506659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNTUnMDEuNCJOIDcywrAwMCc1MS42Ilc!5e0!3m2!1ses!2sco!4v1753635519249!5m2!1ses!2sco"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="text-center mt-2 text-gray-700 text-sm">
+      Calle 3 entre carrera 6 y 7 casa # 6-15 sector centro, Queniquea, Táchira, Venezuela
+    </div>
+  </section>
+
+  <!-- Modales -->
+  <div id="modal1" class="modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+      <button class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-xl" onclick="closeModal('modal1')">×</button>
+      <img src="./static/img/imagen4.jpeg" alt="Te ayudamos" class="rounded-lg mb-4 w-full object-cover h-auto">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">Te ayudamos</h3>
+      <p class="text-gray-600 text-lg">Ofrecemos un acompañamiento cálido y profesional, gestionando trámites legales, documentación y coordinación de la ceremonia de forma personalizada.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+      <button class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-xl" onclick="closeModal('modal2')">×</button>
+      <img src="./static/img/imagen2.jpeg" alt="Ornamentación" class="rounded-lg mb-4 w-full object-cover h-auto">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">Ornamentación fúnebre</h3>
+      <p class="text-gray-600 text-lg">Contamos con una variedad de elementos ornamentales como floreros, velas, tapetes y más, para hacer del espacio un lugar solemne y respetuoso.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+      <button class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-xl" onclick="closeModal('modal3')">×</button>
+      <img src="./static/img/imagen1.jpeg" alt="Velación" class="rounded-lg mb-4 w-full object-cover h-auto">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">Sala de Velación</h3>
+      <p class="text-gray-600 text-lg">Nuestras salas están diseñadas para brindar comodidad, privacidad y tranquilidad en un momento tan delicado como la despedida de un ser querido.</p>
+    </div>
+  </div>
+  <div id="modal4" class="modal hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+      <button class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-xl" onclick="closeModal('modal4')">×</button>
+      <img src="./static/img/imagen7.png" alt="Traslados" class="rounded-lg mb-4 w-full object-cover h-auto">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">Traslados</h3>
+      <p class="text-gray-600 text-lg">Nos encargamos del traslado del cuerpo a nivel local, regional o nacional, cumpliendo con todos los protocolos de respeto y legalidad.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 mt-14 py-8 px-2 sm:px-4 rounded-t-xl">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div>
+        <div class="font-bold text-xl mb-2">Funeraria Cristo Rey Queniquea</div>
+        <p class="text-base">Acompañamos con respeto y serenidad.</p>
+      </div>
+      <div>
+        <ul class="space-y-2 text-base">
+          <li><a href="#servicios" class="hover:underline">Servicios</a></li>
+          <li><a href="#precios" class="hover:underline">Planes y Precios</a></li>
+          <li><a href="#faq" class="hover:underline">FAQ</a></li>
+          <li><a href="#contacto" class="hover:underline">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="mb-2">Contacto inmediato</div>
+        <a href="tel:+584147038574" class="block text-yellow-400 font-bold text-base">+58 414-7038574</a>
+        <a href="tel:+584247032061" class="block text-yellow-400 font-bold text-base">+58 424-7032061</a>
+        <a href="https://www.instagram.com/funecristorey/" class="block text-pink-400 font-bold text-base">instagram: @funecristorey</a>
+        <div class="mt-2 text-base">Calle 3 entre carrera 6 y 7 casa # 6-15 sector centro, Queniquea, Táchira, Venezuela</div>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-base text-gray-400">© 2025 Funeraria Cristo Rey Queniquea. Todos los derechos reservados.</div>
+  </footer>
+  <a href="https://api.whatsapp.com/send?phone=584147038574&text=Hola,%20me%20interesa%20tu%20servicio.%20Me%20regalas%20más%20información?"
+   class="whatsapp-float"
+   title="Chatea por WhatsApp"
+   target="_blank"
+   rel="noopener">
+    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.624.393 3.17 1.17 4.566L2 22l5.601-1.162A9.944 9.944 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.618 0-3.193-.392-4.58-1.137l-.326-.166-3.328.69.681-3.246-.177-.333A7.97 7.97 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.392-6.164c-.205-.102-1.209-.598-1.396-.666-.187-.067-.324-.1-.462.102-.137.201-.529.666-.647.803-.118.137-.237.151-.441.05-.205-.102-.866-.319-1.649-.981a6.187 6.187 0 0 1-1.21-1.503c-.127-.219-.014-.338.095-.44.097-.097.217-.251.326-.377.108-.126.144-.219.216-.366.071-.148.036-.274-.018-.377-.054-.102-.462-1.111-.633-1.52-.166-.401-.336-.348-.462-.355-.119-.007-.255-.009-.391-.009a.747.747 0 0 0-.542.253c-.186.202-.724.707-.724 1.723 0 1.016.74 2 1.011 2.14.271.139 1.384.664 1.579.713.195.049.308.047.422-.028.113-.075.479-.374.941-.725.462-.351.957-.732 1.144-1.06.187-.329.187-.608.133-.725z"></path></svg>
+  </a>
+  <script>
+    document.querySelectorAll('[data-modal]').forEach(button => {
+      button.addEventListener('click', () => {
+        const modalId = button.getAttribute('data-modal');
+        document.getElementById(modalId).classList.remove('hidden');
+      });
+    });
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
