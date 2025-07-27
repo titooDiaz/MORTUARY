@@ -26,3 +26,4 @@ types-python-dateutil==2.9.0.20250708
 typing_extensions==4.14.1
 urllib3==2.2.1              # 👈 más estable
 Pillow
+python-decouple

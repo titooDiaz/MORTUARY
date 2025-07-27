@@ -12,7 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yxcul6=kqrh%yvf#fc5=f#u@o0-hnsv0_2k)3%b)i2=e4=55rn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+from decouple import config
+
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
